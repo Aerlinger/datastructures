@@ -24,16 +24,16 @@ def insert(tree, element):
 
 
 
-# tree = (None, 5, None)
-# tree = outer_insert(tree, 2)
-# tree = outer_insert(tree, 7)
-# tree = outer_insert(tree, 9)
-# tree = outer_insert(tree, 10)
-# tree = outer_insert(tree, 11)
-# tree = outer_insert(tree, 14)
-# tree = outer_insert(tree, 1)
+# trees = (None, 5, None)
+# trees = outer_insert(trees, 2)
+# trees = outer_insert(trees, 7)
+# trees = outer_insert(trees, 9)
+# trees = outer_insert(trees, 10)
+# trees = outer_insert(trees, 11)
+# trees = outer_insert(trees, 14)
+# trees = outer_insert(trees, 1)
 
-#print tree
+#print trees
 
 
 class Node:
@@ -53,7 +53,7 @@ class Node:
         return ret
 
     def __repr__(self):
-        return '<tree node representation>'
+        return '<trees node representation>'
 
     str(self.value)
     # queue = []

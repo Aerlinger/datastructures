@@ -1,4 +1,4 @@
-class node(object):
+class Node(object):
     def __init__(self, value, children = []):
         self.value = value
         self.children = children
@@ -10,8 +10,4 @@ class node(object):
         return ret
 
     def __repr__(self):
-        return '<tree node representation>'
-
-
-root = node('grandmother')
-
+        return '<trees node representation>'

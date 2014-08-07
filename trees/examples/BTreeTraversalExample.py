@@ -1,5 +1,5 @@
-from binaryTree.binaryTreeTraverser import *
-from binaryTree.binaryTreeFactory import *
+from trees.binarytree.binaryTreeTraverser import *
+from trees.binarytree.binaryTreeFactory import *
 
 
 balancedTree = makeBalancedTree(3)

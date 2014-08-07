@@ -1,4 +1,4 @@
-from binaryTreeNode import *
+from trees.binarytree.binaryTreeNode import *
 
 def makeBalancedTree(numTiers = 3):
     if numTiers is 0:
