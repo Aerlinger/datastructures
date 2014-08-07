@@ -21,4 +21,3 @@ class StackTest(unittest.TestCase):
       self.stack.push(i)
 
     self.assertRaises(Exception, self.stack.push, 5)
-    

@@ -7,4 +7,4 @@ class ListNode:
         return self._next
 
     def setNext(self):
-        return self._nextS§
+        return self._next
