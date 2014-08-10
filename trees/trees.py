@@ -36,28 +36,6 @@ def insert(tree, element):
 #print trees
 
 
-class Node:
-  def __init__(self, value, left=None, right=None):
-    self.visited = False
-    self.value  = value
-    self.left   = left
-    self.right  = right
-
-  #def __repr__(self):
-#    return str(self.left) + " " + self.value + " " + str(self.right)
-
-    def __str__(self, level=0):
-        ret = "\t"*level+repr(self.value)+"\n"
-        for child in self.children:
-            ret += child.__str__(level+1)
-        return ret
-
-    def __repr__(self):
-        return '<trees node representation>'
-
-    str(self.value)
-    # queue = []
-
 
 
 
@@ -80,31 +58,7 @@ def visit(node, depth = 0):
   else:
     print("X")
 
-# Breadth- first search
-def bfs(root):
-  # Queue tracks which nodes we've visited so we don't visit the same ones twice
-  queue = []
-  this_level = []
 
-  depth = 0
-
-  # seed our queue with the root node
-  visit(root, len(queue))
-  queue.append(root)
-  print("pushing: " + str(root.value))
-
-  while queue != []:
-    # We've added all this level's children so start popping:
-    node = queue.pop(0)
-    print("popping " + str(node.value))
-
-    children = [node.left, node.right]
-
-    for child in children:
-      if child is not None and not child.visited:
-        visit(child, depth)
-        print("pushing: " + str(child.value))
-        queue.append(child)
 
 
 
