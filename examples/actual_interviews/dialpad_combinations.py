@@ -30,78 +30,13 @@ def num2set(phone_number):
 
     return result
 
-##
-# Input: A string and a tuple of characters
-# Output: Re-mapped set of possible outputs with given leftmost character
-#
-# Ex: find_combinations("ab", ("d", "e", "f")) -> ["abd", "abe", "abf"]
-def append_combinations(subcode, dialpad_set):
-    result = []
-    for dialpad_char in dialpad_set:
-        result.append(subcode + dialpad_char)
-
-    return result
-
-
-global_results = set()
-
-##
-# Input: a sequence of tuples representing dialpad codes
-# Output: All possible pairs of output
-#
-# Ex: build_subcombinations([("a", "b", "c"), ("d", "e", "f")]) -> ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]
-def build_subcombinations(input_so_far, input_sequence):
-    if len(input_sequence) < 1:
-        print input_so_far
-        global_results.add(input_so_far)  # TODO: base case return?
+def process_combinations(input_character_set, combination):
+    if len(combination) == len(input_character_set):
+        # Sentinel
+        print combination
         return
 
-    dialpad_chars = input_sequence.pop(0)   # dialpad_chars = ("a", "b", "c"); input_sequence = ("d", "e", "f")
+    for character in input_character_set[len(combination)]:
+        process_combinations(input_character_set, combination + [character])
 
-    # append_combinations(input_so_far, dialpad_chars)  # combination_set = ("a", "b", "c")
-
-    for character in dialpad_chars:
-        build_subcombinations(input_so_far + character, dialpad_chars)
-
-
-    # results = []
-    # for combination in combination_set:
-        # print combination
-        # build_subcombinations(combination, input_sequence)
-        # nested_combinations = build_subcombinations(combination, input_sequence)
-        # print nested_combinations
-        # for nested_combination in nested_combinations:
-        #     results.append(nested_combination)
-            # print result
-
-    # return results
-
-# def iterative_combinations(input_sequence):
-#     results = []
-#
-#     while len(input_sequence) > 0:
-#         left_set = input_sequence.pop(0)
-#         for char in left_set:
-#             results.push[char]
-
-
-
-
-def build_combinations(input):
-    pass
-
-
-assert num2set("2") == [("a", "b", "c")]
-assert num2set("23") == [("a", "b", "c"), ("d", "e", "f")]
-
-assert append_combinations("ab", ("d", "e", "f")) == ["abd", "abe", "abf"]
-assert append_combinations("a", ("d", "e", "f")) == ["ad", "ae", "af"]
-assert append_combinations("", ("d", "e", "f")) == ["d", "e", "f"]
-
-
-# print build_subcombinations("", [("a", "b", "c"), ("d", "e", "f")])
-build_subcombinations("", [("a", "b", "c"), ("d", "e", "f")])
-# print global_results
-# print build_subcombinations([("d", "e", "f"), ("d", "e", "f")])
-# print len(build_subcombinations("a", [("d", "e", "f"), ("d", "e", "f")]))
-#assert build_subcombinations("a", [("d", "e", "f")]) == ["ad", "ae", "af"]
+process_combinations(num2set("23"), [])
